@@ -253,7 +253,7 @@ Proceeds from donations are used to fund development on the MyUltrapoint back-en
 
 Contributors to each release are credited in release notes.
 
-Checkout [MyUltrapoint contributors](https://github.com/ultrapoint/myultrapoint-core/graphs/contributors) and [MyMonero contributors](https://github.com/mymonero/mymonero-app-js/graphs/contributors)
+Checkout [MyUltrapoint contributors](https://github.com/ultrapoint/myultrapoint-app/graphs/contributors) and [MyMonero contributors](https://github.com/mymonero/mymonero-app-js/graphs/contributors)
 
 ### MyMonero Core
 
