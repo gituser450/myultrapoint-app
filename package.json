@@ -1,0 +1,157 @@
+{
+  "name": "MyUltrapoint",
+  "author": "weloobe",
+  "description": "The simplest way to use Ultrapoint",
+  "version": "0.8.9",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "repository": "https://github.com/ultrapoint/myultrapoint-app",
+  "private": false,
+  "main": "./local_modules/electron_main/electron_main.js",
+  "scripts": {
+    "start": "electron ./local_modules/electron_main/electron_main.js",
+    "start-dev": "NODE_ENV=development electron ./local_modules/electron_main/electron_main.js",
+    "pack": "CSC_IDENTITY_AUTO_DISCOVERY=false CSC_NAME=\"Mac Developer\" build --dir -mwl",
+    "dist": "CSC_IDENTITY_AUTO_DISCOVERY=false CSC_NAME=\"Mac Distribution\" build -mwl",
+    "postinstall": "install-app-deps"
+  },
+  "build": {
+    "appId": "com.forkcoinage.myultrapoint",
+    "copyright": "Copyright © 2017 ForkCoinAge corp/",
+    "asar": true,
+    "forceCodeSigning": false,
+    "files": [
+      "**/*",
+      "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme,test,__tests__,tests,powered-test,example,examples,*.d.ts}",
+      "!**/node_modules/.bin",
+      "!**/*.{o,hprof,orig,pyc,pyo,rbc}",
+      "!**/._*",
+      "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,__pycache__,thumbs.db,.gitignore,.gitattributes,.editorconfig,.flowconfig,.yarn-metadata.json,.idea,appveyor.yml,.travis.yml,circle.yml,npm-debug.log,.nyc_output,yarn.lock,.yarn-integrity}",
+      "!dist",
+      "!docs",
+      "!plugins",
+      "!platforms",
+      "!docs",
+      "!www",
+      "!cordova_res",
+      "!bin",
+      "!**/*.cordova.*",
+      "!**/*.Lite.*",
+      "!**/favicon*.png",
+      "!**/favicon*.ico"
+    ],
+    "mac": {
+      "category": "public.app-category.finance",
+      "target": [
+        "dir"
+      ],
+      "icon": "build/icon.icns"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "legalTrademarks": "Copyright © 2017 ForkCoinAge corp.",
+      "publisherName": "MyUltrapoint"
+    },
+    "nsis": {
+      "perMachine": true
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ]
+    },
+    "protocols": [
+      {
+        "name": "Ultrapoint Funds Request URL",
+        "schemes": [
+          "ultrapoint"
+        ]
+      }
+    ]
+  },
+  "engines": {
+    "node": "7.4.0"
+  },
+  "dependencies": {
+    "async": "^2.1.2",
+    "com.ozexpert.devicemeta": "https://github.com/ozexpert/cordova-plugin-device-meta.git",
+    "com.synconset.imagepicker": "https://github.com/Telerik-Verified-Plugins/ImagePicker.git",
+    "com.verso.cordova.clipboard": "https://github.com/ibnclaudius/CordovaClipboard",
+    "cordova-android": "^6.2.3",
+    "cordova-base64-to-gallery": "https://github.com/medi-y-sato/cordova-base64-to-gallery",
+    "cordova-plugin-app-version": "~0.1.9",
+    "cordova-plugin-compat": "~1.1.0",
+    "cordova-plugin-customurlscheme": "~4.2.0",
+    "cordova-plugin-device": "~1.1.5",
+    "cordova-plugin-dialogs": "~1.3.2",
+    "cordova-plugin-file": "~4.3.2",
+    "cordova-plugin-globalization": "~1.0.6",
+    "cordova-plugin-inappbrowser": "~1.7.0",
+    "cordova-plugin-insomnia": "https://github.com/EddyVerbruggen/Insomnia-PhoneGap-Plugin.git",
+    "cordova-plugin-qrscanner": "~2.5.0",
+    "cordova-plugin-splashscreen": "https://github.com/apache/cordova-plugin-splashscreen.git",
+    "cordova-plugin-statusbar": "~2.2.2",
+    "cordova-plugin-whitelist": "~1.3.2",
+    "electron-context-menu": "^0.9.0",
+    "fastclick": "^1.0.6",
+    "html5-fs": "^0.1.1",
+    "ionic-plugin-keyboard": "~2.2.1",
+    "jsqr": "^0.2.1",
+    "mkdirp": "^0.5.1",
+    "node-notifier": "^4.6.1",
+    "qrcode": "^0.8.1",
+    "underscore": "^1.8.3",
+    "uuid": "^3.0.1",
+    "velocity-animate": "^1.4.0",
+    "xhr": "^2.3.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-minify": "^0.2.0",
+    "electron": "1.7.9",
+    "electron-builder": "^16.0.1",
+    "electron-packager": "^8.1.0",
+    "eslint": "^3.19.0",
+    "mocha": "^3.2.0",
+    "request": "^2.79.0",
+    "sharp": "^0.17.3",
+    "spectron": "^3.6.1",
+    "webpack": "^2.3.3",
+    "webpack-merge": "^4.1.0",
+    "worker-loader": "^0.8.0"
+  },
+  "cordova": {
+    "platforms": [
+      "android"
+    ],
+    "plugins": {
+      "ionic-plugin-keyboard": {},
+      "cordova-plugin-file": {},
+      "cordova-plugin-globalization": {},
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-app-version": {},
+      "com.ozexpert.devicemeta": {},
+      "cordova-plugin-compat": {},
+      "cordova-base64-to-gallery": {},
+      "com.verso.cordova.clipboard": {},
+      "cordova-plugin-customurlscheme": {
+        "URL_SCHEME": "ultrapoint",
+        "ANDROID_SCHEME": " ",
+        "ANDROID_HOST": " ",
+        "ANDROID_PATHPREFIX": "/"
+      },
+      "cordova-plugin-inappbrowser": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-insomnia": {},
+      "com.synconset.imagepicker": {
+        "PHOTO_LIBRARY_USAGE_DESCRIPTION": "The MyUltrapoint app uses your device's photo roll for downloading and for opening Ultrapoint Request QR code files."
+      },
+      "cordova-plugin-dialogs": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-qrscanner": {}
+    }
+  }
+}

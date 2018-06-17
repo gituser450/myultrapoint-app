@@ -1,0 +1,21 @@
+.DS_Store
+
+node_modules
+npm-debug.log
+dist
+
+test_products
+**/tests_config.js
+
+electron_child_crashReport_tmp
+
+stats.json
+
+cordova_res/build/*
+cordova.android.build.json
+android_release.jks
+
+# vscode ignore
+jsconfig.json
+.vscode
+typings
